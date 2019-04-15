@@ -1,0 +1,125 @@
+/*******************************************************************************
+  CSS reset, and General styles
+*******************************************************************************/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  border: 0;
+  color: #000;
+  font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
+  font-weight: 300;
+  vertical-align: baseline;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  line-height: 0;
+  vertical-align: middle;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+}
+
+button {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  outline: 0;
+}
+
+button[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+textarea {
+  overflow: auto;
+  resize: vertical;
+}
+
+/*******************************************************************************
+  Frequently used classes
+*******************************************************************************/
+:global {
+  .display-flex {
+    display: flex;
+  }
+
+  .display-flex-column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .flex-item-1 {
+    flex: 1 1 auto;
+  }
+
+  .flex-items-align-center {
+    align-items: center;
+  }
+
+  .flex-items-justify-content-center {
+    justify-content: center;
+  }
+
+  .font-size-16 {
+    font-size: 1.6rem;
+  }
+
+  .padding-all-15 {
+    padding: 15px;
+  }
+
+  .width-100 {
+    width: 100%;
+  }
+}
+
+.wrapper {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "page-specific-content"
+    "footer";
+  grid-template-rows: auto 1fr auto;
+  margin: 0 auto;
+  max-width: 1440px;
+  min-height: 100vh;
+  min-width: 300px;
+}
+
+.page-specific-content {
+  grid-area: page-specific-content;
+}

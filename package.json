@@ -1,0 +1,46 @@
+{
+  "name": "react-ecosystem-boilerplate",
+  "version": "1.0.3",
+  "description": "React ecosystem boilerplate",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-router-dom": "^4.3.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.3.4",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.3.3",
+    "babel-jest": "^24.5.0",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-react-remove-properties": "^0.3.0",
+    "css-loader": "^2.1.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "node-sass": "^4.11.0",
+    "prettier": "^1.16.4",
+    "react-hot-loader": "^4.6.3",
+    "sass-loader": "^7.1.0",
+    "source-map-loader": "^0.2.4",
+    "style-loader": "^0.23.1",
+    "terser-webpack-plugin": "^1.2.1",
+    "webpack": "^4.29.3",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.1.14",
+    "workbox-webpack-plugin": "^4.1.1"
+  },
+  "scripts": {
+    "clean:dev": "yarn run clean:dev:css &&  yarn run clean:dev:js",
+    "clean:dev:css": "rm -rf dist/public/dev/*.css && rm -rf dist/public/*.css.map",
+    "clean:dev:js": "rm -rf dist/private/*.js && rm -rf dist/private/*.js.map && rm -rf dist/public/*.js && rm -rf dist/public/*.js.map",
+    "build:dev": "yarn run build:dev:client && yarn run build:dev:server",
+    "build:dev:client": "webpack --config client.dev.config.js",
+    "build:dev:server": "webpack --config server.dev.config.js",
+    "start:dev": "yarn run clean:dev && yarn run build:dev && node dist/private/server.js",
+    "wds": "webpack-dev-server --config dev-server.config.js"
+  }
+}
