@@ -1,0 +1,13 @@
+.footer {
+  border-top: 1px solid #a1a1a1;
+  grid-area: footer;
+}
+
+.footer li:not(:last-child) {
+  margin-right: 15px;
+}
+
+.footer a {
+  color: #000;
+  font-size: 1.6rem;
+}

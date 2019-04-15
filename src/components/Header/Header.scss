@@ -1,0 +1,17 @@
+.header {
+  border-bottom: 1px solid #a1a1a1;
+  grid-area: header;
+}
+
+.logo {
+  color: #0c77f8;
+  font-weight: normal;
+
+  &:hover {
+    color: #0c77f8;
+  }
+
+  &:visited {
+    color: #0c77f8;
+  }
+}
